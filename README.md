@@ -121,6 +121,12 @@ Ejecutar contenedor:
 docker run --rm -p 3000:3000 api-call-detector
 ```
 
+Notas para EasyPanel/hosting:
+
+- Configura el puerto de la app con la variable `PORT` (por ejemplo `3000` o el que te asigne la plataforma).
+- El servicio responde `200` en `GET /health` y también en `GET /`.
+- Si tu panel permite definir health check, usa `path: /health`.
+
 ## Versionado automático (GitHub)
 
 El repositorio incluye un workflow de GitHub Actions en:

@@ -3,7 +3,7 @@ import { env } from './config/env';
 import { browserService } from './services/browser.service';
 import { logger } from './utils/logger';
 
-const server = app.listen(env.port);
+const server = app.listen(env.port, '0.0.0.0');
 
 server.on('listening', () => {
   logger.info(`Service listening on port ${env.port}`);
