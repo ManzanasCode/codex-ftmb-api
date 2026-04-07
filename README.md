@@ -106,6 +106,20 @@ npm run build
 npm start
 ```
 
+## Docker
+
+Build de imagen:
+
+```bash
+docker build -t api-call-detector .
+```
+
+Ejecutar contenedor:
+
+```bash
+docker run --rm -p 3000:3000 api-call-detector
+```
+
 ## Dónde probar en local (Mac)
 
 Por defecto el backend corre en puerto `3000`.
