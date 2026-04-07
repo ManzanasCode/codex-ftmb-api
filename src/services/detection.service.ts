@@ -106,7 +106,7 @@ class DetectionService {
       }
 
       const hashMatch = parsed.hash.match(/(\d+)/);
-      return hashMatch ? hashMatch[1] : null;
+      return hashMatch?.[1] ?? null;
     } catch {
       return null;
     }
