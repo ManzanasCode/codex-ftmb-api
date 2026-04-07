@@ -18,6 +18,7 @@ Recibe una URL, abre la página con Chromium headless, escucha respuestas de red
 
 - Endpoint `POST /detect`
 - Endpoint `GET /health`
+- Endpoint `GET /app-info`
 - Swagger UI en `GET /docs`
 - Dedupe de llamadas por URL
 - Filtro opcional por términos en `filters` (arreglo de strings)
@@ -120,6 +121,18 @@ Ejecutar contenedor:
 docker run --rm -p 3000:3000 api-call-detector
 ```
 
+## Versionado automático (GitHub)
+
+El repositorio incluye un workflow de GitHub Actions en:
+
+- `.github/workflows/auto-version-bump.yml`
+
+Comportamiento:
+
+- En cada `push` a `main`, incrementa automáticamente la versión `patch` de `package.json` y `package-lock.json`.
+- Crea commit automático con el nuevo número de versión.
+- Crea y publica un tag con formato `vX.Y.Z`.
+
 ## Dónde probar en local (Mac)
 
 Por defecto el backend corre en puerto `3000`.
@@ -138,7 +151,7 @@ Luego usa: `http://TU_IP_LOCAL:3000`
 ## Swagger
 
 - URL: `http://localhost:3000/docs`
-- Desde ahí puedes ejecutar `POST /detect` con **Try it out**
+- Desde ahí puedes ejecutar `POST /detect` y `GET /app-info` con **Try it out**
 
 ## Endpoints
 
@@ -149,6 +162,20 @@ Respuesta:
 ```json
 {
   "status": "ok"
+}
+```
+
+### `GET /app-info`
+
+Respuesta:
+
+```json
+{
+  "serviceName": "api-call-detector-service",
+  "deployedVersion": "1.0.0",
+  "environment": "production",
+  "uptimeSeconds": 42,
+  "timestamp": "2026-04-07T06:42:00.000Z"
 }
 ```
 

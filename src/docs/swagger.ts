@@ -18,6 +18,10 @@ const options: swaggerJSDoc.Options = {
         name: 'Health',
         description: 'Service health endpoints',
       },
+      {
+        name: 'App',
+        description: 'Application metadata endpoints',
+      },
     ],
     components: {
       schemas: {
@@ -95,6 +99,32 @@ const options: swaggerJSDoc.Options = {
               items: {
                 $ref: '#/components/schemas/ApiCall',
               },
+            },
+          },
+        },
+        AppInfoResponse: {
+          type: 'object',
+          properties: {
+            serviceName: {
+              type: 'string',
+              example: 'api-call-detector-service',
+            },
+            deployedVersion: {
+              type: 'string',
+              example: '1.0.3',
+            },
+            environment: {
+              type: 'string',
+              example: 'production',
+            },
+            uptimeSeconds: {
+              type: 'integer',
+              example: 245,
+            },
+            timestamp: {
+              type: 'string',
+              format: 'date-time',
+              example: '2026-04-07T06:42:00.000Z',
             },
           },
         },
