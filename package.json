@@ -1,6 +1,6 @@
 {
   "name": "api-call-detector-service",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Production-ready microservice to detect and extract XHR/fetch API calls from webpages",
   "main": "dist/index.js",
   "type": "commonjs",
