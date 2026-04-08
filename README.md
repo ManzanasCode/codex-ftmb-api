@@ -158,6 +158,8 @@ Luego usa: `http://TU_IP_LOCAL:3000`
 
 - URL: `http://localhost:3000/docs`
 - Desde ahí puedes ejecutar `POST /detect` y `GET /app-info` con **Try it out**
+- Spec JSON directa: `http://localhost:3000/openapi.json`
+- En `/docs` también se inyecta la spec inline en el HTML (`<script id="openapi-inline-spec" type="application/json">...`)
 
 ## Endpoints
 
